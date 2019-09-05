@@ -1037,7 +1037,7 @@ App::DocumentObjectExecReturn *Hole::execute(void)
                 return new App::DocumentObjectExecReturn("Hole: Invalid countersink angle.");
 
             if (holeCutRadius < radius)
-                return new App::DocumentObjectExecReturn("Hole: Hole cut diameter too small.");
+                return new App::DocumentObjectExecReturn("Hole: Countersink diameter too small.");
 
             // Top point
             gp_Pnt newPoint = toPnt(holeCutRadius * xDir);
@@ -1062,13 +1062,13 @@ App::DocumentObjectExecReturn *Hole::execute(void)
             double x, z;
 
             if (holeCutDepth <= 0)
-                return new App::DocumentObjectExecReturn("Hole: Hole cut depth must be greater than zero.");
+                return new App::DocumentObjectExecReturn("Hole: Counterbore depth must be greater than zero.");
 
             if (holeCutDepth > length)
-                return new App::DocumentObjectExecReturn("Hole: Hole cut depth must be less than hole depth.");
+                return new App::DocumentObjectExecReturn("Hole: Counterbore depth must be less than hole depth.");
 
             if (holeCutRadius < radius)
-                return new App::DocumentObjectExecReturn("Hole: Hole cut diameter too small.");
+                return new App::DocumentObjectExecReturn("Hole: Counterbore diameter too small.");
 
             // Top point
             gp_Pnt newPoint = toPnt(holeCutRadius * xDir);
